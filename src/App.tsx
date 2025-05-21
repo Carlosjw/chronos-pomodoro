@@ -4,7 +4,6 @@ import './styles/theme.css'
 import './styles/global.css'
 
 export function App() {
-    console.log("Hi");
     return (
         <>
             <Heading attr={'Carlos'} attr2={`${36} anos`}>Olá mundo!</Heading>
