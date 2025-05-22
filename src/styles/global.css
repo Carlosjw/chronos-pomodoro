@@ -26,7 +26,6 @@ body {
 
 .container {
     max-width: 98rem;
-    background: brown;
     margin: 0 auto;
 }
 
@@ -35,6 +34,5 @@ body {
 }
 
 .content {
-    background-color: blue;
     margin: 3.2rem;
 }
