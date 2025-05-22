@@ -1,4 +1,4 @@
-import styles from './Heading.module.css';
+import styles from './styles.module.css';
 
 // TIPANDO VARIÁVEIS COM TS
 type HeadingProps = {
