@@ -46,6 +46,19 @@ body {
     gap: 2.4rem;
 }
 
+.formRow input{
+    padding: .8rem;
+    background: var(--gray-900);
+    border: none;
+    border-bottom: 2px solid var(--primary);   
+    outline: none;
+}
+
+.formRow input:focus{
+    border: 2px solid var(--primary);
+    border-radius: 1rem;
+}
+
 .sendButton {
     min-width: 24rem;
     padding: .8rem;
