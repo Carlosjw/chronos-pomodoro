@@ -6,6 +6,7 @@ import { Logo } from './components/Logo'
 import { Menu } from './components/Menu'
 import { CountDown } from './components/CountDown'
 import { CirclePlay } from 'lucide-react'
+import { DefaultInput } from './components/DefaultInput'
 
 export function App() {
     return (
@@ -22,8 +23,7 @@ export function App() {
             <Container>
                 <form action="" className="form">
                     <div className="formRow">
-                        <label htmlFor="inputTask">task</label>
-                        <input type="text" id="inputTask" />
+                        <DefaultInput id='inputDefault' type='text'/>
                     </div>
 
                     <div className="formRow">
@@ -36,7 +36,7 @@ export function App() {
                     </div>
 
                     <div className="formRow">
-                        <button className='sendButton'><CirclePlay/></button>
+                        <button className='sendButton'><CirclePlay /></button>
                     </div>
                 </form>
             </Container>
