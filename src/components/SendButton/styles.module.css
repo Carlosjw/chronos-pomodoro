@@ -1,0 +1,31 @@
+.sendButton {
+  min-width: 24rem;
+  padding: .8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .8rem;
+  border: none;
+  color: var(--text-over-primary);
+  background-color: var(--primary);
+  cursor: pointer;
+  margin: 4.8rem;
+}
+
+.sendButton svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.sendButton:hover {
+  filter: brightness(80%);
+}
+
+.red {
+  background-color: var(--error);
+  color: var(--text-default);
+}
+
+.green {
+  background-color: var(--primary);
+}
