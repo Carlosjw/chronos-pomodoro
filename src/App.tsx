@@ -9,10 +9,23 @@ import { DefaultInput } from './components/DefaultInput'
 import { Cycles } from './components/Cycles'
 import { SendButton } from './components/SendButton'
 import { CirclePlay } from 'lucide-react'
+import { Footer } from './components/Footer'
+import { Heading } from './components/Heading'
+import { useState } from 'react'
 
 export function App() {
+    const [numero, setNumero] = useState(0);
+
+    function handleClick() {
+        setNumero(numero + 1)
+    }
+
     return (
         <>
+
+            <Heading>Número: {numero}</Heading>
+            <button onClick={handleClick}>Aumenta</button>
+
             <Container>
                 <Logo />
             </Container>
@@ -26,7 +39,7 @@ export function App() {
                 <form action="" className="form">
                     <div className="formRow">
                         <DefaultInput
-                            labelText='task'
+                            labelText="Tarefa"
                             id='inputDefault'
                             type='text'
                             placeholder='Ex: estudar para a prova'
@@ -45,6 +58,10 @@ export function App() {
                         <SendButton icon={<CirclePlay />} color='green' />
                     </div>
                 </form>
+            </Container>
+
+            <Container>
+                <Footer />
             </Container>
 
         </>
