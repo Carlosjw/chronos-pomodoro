@@ -1,18 +1,18 @@
 import styles from './styles.module.css'
 
-type SendButtonProps = {
+type DefaultButtonProps = {
   icon: React.ReactNode;
   color?: 'green' | 'red'
 } & React.ComponentProps<'button'>;
 
-export function SendButton({
+export function DefaultButton({
   icon,
   color = 'green',
   ...props
-}: SendButtonProps) {
+}: DefaultButtonProps) {
   return (
     <>
-      <button className={`${styles.sendButton} ${styles[color]}`} {...props}>
+      <button className={`${styles.defaultButton} ${styles[color]}`} {...props}>
         {icon}
       </button>
     </>

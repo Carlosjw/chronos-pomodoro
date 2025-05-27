@@ -1,4 +1,4 @@
-.sendButton {
+.defaultButton {
   min-width: 24rem;
   padding: .8rem;
   display: flex;
@@ -12,12 +12,12 @@
   margin: 4.8rem;
 }
 
-.sendButton svg {
+.defaultButton svg {
   width: 3.2rem;
   height: 3.2rem;
 }
 
-.sendButton:hover {
+.defaultButton:hover {
   filter: brightness(80%);
 }
 

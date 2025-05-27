@@ -7,17 +7,29 @@ import { Menu } from './components/Menu'
 import { CountDown } from './components/CountDown'
 import { DefaultInput } from './components/DefaultInput'
 import { Cycles } from './components/Cycles'
-import { SendButton } from './components/SendButton'
+import { DefaultButton } from './components/DefaultButton'
 import { CirclePlay } from 'lucide-react'
 import { Footer } from './components/Footer'
 import { Heading } from './components/Heading'
 import { useState } from 'react'
 
 export function App() {
+
+    // Sempre que vou usar userState não vou usar atribuição diretamente
+
+    // UTILIZANDO LAZY INITIALIZATION
+    /*const [numero, setNumero] = useState(() => {
+        console.log('Lazy initialization');
+        return 0;
+    }); */
+
     const [numero, setNumero] = useState(0);
 
     function handleClick() {
-        setNumero(numero + 1)
+        /* -- SALVANDO O VALOR ANTERIOR DA VARIÁVEL COM prevState
+            setNumero(prevState => prevState + 1);
+        */
+        setNumero(numero + 1);
     }
 
     return (
@@ -55,7 +67,7 @@ export function App() {
                     </div>
 
                     <div className="formRow">
-                        <SendButton icon={<CirclePlay />} color='green' />
+                        <DefaultButton icon={<CirclePlay />} color='green' />
                     </div>
                 </form>
             </Container>
