@@ -1,13 +1,23 @@
-import { HistoryIcon, HomeIcon, SettingsIcon, Sun } from 'lucide-react';
+import { HistoryIcon, HomeIcon, MoonIcon, SettingsIcon, SunIcon } from 'lucide-react';
 import styles from './styles.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // DEFININDO TEMAS PADRÃO
 type AvailableThes = 'dark' | 'light';
 
 export function Menu() {
 
-    const [theme, setTheme] = useState<AvailableThes>('dark');
+    const [theme, setTheme] = useState<AvailableThes>(() => {
+        const storageTheme =
+            (localStorage.getItem('theme') as AvailableThes) || 'dark';
+        return storageTheme;
+    });
+
+    // CRIANDO UMA LOOK AT TABLE COM OS ÍCONES
+    const nextThemeIcon = {
+        dark: <SunIcon />,
+        light: <MoonIcon />
+    }
 
     function changeTheme(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
         event.preventDefault(); // 'Não segue o link'
@@ -16,37 +26,47 @@ export function Menu() {
             return nextTheme;
         });
 
+    };
+
+    useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
-    }
+
+        // SALVANDO TEMA NO LOCALSTORAGE
+        localStorage.setItem('theme', theme);
+
+    }, [theme]); // passando uma dependência qualquer
 
     return (<nav className={styles.menu}>
-        <h1>{theme}</h1>
 
         <a className={styles.menuLink}
             href="#"
             aria-label='Home'
-            title='Home'>
+            title='Home'
+        >
             <HomeIcon />
         </a>
         <a className={styles.menuLink}
             href="#"
             aria-label='Histórico'
-            title='Histórico'>
+            title='Histórico'
+        >
             <HistoryIcon />
         </a>
         <a className={styles.menuLink}
             href="#"
             aria-label='Configurações'
-            title='Configurações'>
+            title='Configurações'
+        >
             <SettingsIcon />
         </a>
         <a className={styles.menuLink}
             href="#"
             aria-label='Alterar Tema'
             title='Alterar Tema'
-            onClick={changeTheme} // chamando função que altera o tema
+            onClick={changeTheme}
         >
-            <Sun />
+            {/* CHAMANDO ÍCONE DO THEMA ATUAL */}
+            {nextThemeIcon[theme]}
         </a>
     </nav>
     )
