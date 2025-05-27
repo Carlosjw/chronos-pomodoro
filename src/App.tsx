@@ -10,34 +10,11 @@ import { Cycles } from './components/Cycles'
 import { DefaultButton } from './components/DefaultButton'
 import { CirclePlay } from 'lucide-react'
 import { Footer } from './components/Footer'
-import { Heading } from './components/Heading'
-import { useState } from 'react'
 
 export function App() {
 
-    // Sempre que vou usar userState não vou usar atribuição diretamente
-
-    // UTILIZANDO LAZY INITIALIZATION
-    /*const [numero, setNumero] = useState(() => {
-        console.log('Lazy initialization');
-        return 0;
-    }); */
-
-    const [numero, setNumero] = useState(0);
-
-    function handleClick() {
-        /* -- SALVANDO O VALOR ANTERIOR DA VARIÁVEL COM prevState
-            setNumero(prevState => prevState + 1);
-        */
-        setNumero(numero + 1);
-    }
-
     return (
         <>
-
-            <Heading>Número: {numero}</Heading>
-            <button onClick={handleClick}>Aumenta</button>
-
             <Container>
                 <Logo />
             </Container>
